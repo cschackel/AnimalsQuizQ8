@@ -28,7 +28,7 @@ public class Main {
         boolean addAnimal = addAnimalInput.toUpperCase().charAt(0)=='Y'?true:false;
         while(addAnimal)
         {
-            ZooManagement.newAnimal(zoo);
+            ZooManagement.newAnimal(zoo);  //Although Not an instantiation, this statically calls the IO class
             System.out.print("Add Animal(Y/N): ");
             addAnimalInput = keyboard.nextLine();
             while(addAnimalInput.toUpperCase().charAt(0)!='Y'&&addAnimalInput.toUpperCase().charAt(0)!='N')
