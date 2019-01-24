@@ -28,7 +28,8 @@ public class Main {
         boolean addAnimal = addAnimalInput.toUpperCase().charAt(0)=='Y'?true:false;
         while(addAnimal)
         {
-            ZooManagement.newAnimal(zoo);  //Although Not an instantiation, this statically calls the IO class
+            ZooManagement.typeVerifiedNewAnimal(zoo);
+            //ZooManagement.newAnimal(zoo);  //Although Not an instantiation, this statically calls the IO class
             System.out.print("Add Animal(Y/N): ");
             addAnimalInput = keyboard.nextLine();
             while(addAnimalInput.toUpperCase().charAt(0)!='Y'&&addAnimalInput.toUpperCase().charAt(0)!='N')
@@ -46,13 +47,14 @@ public class Main {
 
         for (Talkable thing: zoo) {
             printOut(thing);
+
         }
         outFile.fileClose();
         inFile.fileRead();
         inFile.fileClose();
-        FileInput indata = new FileInput("animals.txt");
+        FileInput inData = new FileInput("animals.txt");
         String line;
-        while ((line = indata.fileReadLine()) != null) {
+        while ((line = inData.fileReadLine()) != null) {
             System.out.println(line);
         }
     }
